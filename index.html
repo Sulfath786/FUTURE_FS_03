@@ -107,6 +107,21 @@
     <p>&copy; 2026 The Flavour Hub. All Rights Reserved.</p>
   </footer>
 
+  <script>
+    fetch("header.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("header").innerHTML = data;
+
+        // re-attach menu toggle functionality after loading
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navLinks = document.querySelector(".nav-links");
+        menuToggle.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+        });
+      });
+  </script>
+
   <script src="script.js"></script>
 </body>
 </html>
