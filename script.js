@@ -71,6 +71,11 @@ function validateForm() {
   return true;
 }
 
+fetch("header.html")
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById("header").innerHTML = data;
+
 // Attach after header is loaded
 document.addEventListener("DOMContentLoaded", () => {
   const menuToggle = document.querySelector(".menu-toggle");
