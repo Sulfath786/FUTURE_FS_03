@@ -9,9 +9,6 @@ body {
 
 /* Header & Navigation */
 header {
-   display: flex;
-  justify-content: space-between;
-   align-items: center;
   background: white;
   color: rgb(14, 14, 14);
   padding: 0.5rem 1rem;
