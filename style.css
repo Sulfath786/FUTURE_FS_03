@@ -83,7 +83,7 @@ nav a:hover {
     margin-top: 1rem;
   }
  #nav-menu li {
-    display: block;
+    display: inline-block;
   }
 }
 
