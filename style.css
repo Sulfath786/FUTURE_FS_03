@@ -78,7 +78,7 @@ nav a:hover {
   }
 
   #nav-menu {
-    flex-direction: column;
+    flex-direction: row;
     gap: 1rem;
     margin-top: 1rem;
   }
