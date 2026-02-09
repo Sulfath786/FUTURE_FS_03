@@ -1,31 +1,21 @@
-// Smooth scroll to Menu section (homepage only)
-function scrollToMenu() {
-  const menuSection = document.getElementById("menu");
-  if (menuSection) {
-    menuSection.scrollIntoView({ behavior: "smooth" });
-  }
+// Mobile nav toggle
+const navToggle = document.querySelector(".nav-toggle");
+const navMenu = document.getElementById("nav-menu");
+if (navToggle) {
+  navToggle.addEventListener("click", () => {
+    const open = navMenu.classList.toggle("open");
+    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+  });
 }
 
-// Highlight active nav link based on scroll position
-window.addEventListener("scroll", () => {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll("nav ul li a");
+// Highlight active nav link automatically
+const currentPage = window.location.pathname.split("/").pop();
+const navLinks = document.querySelectorAll(".nav-menu a");
 
-  let current = "";
-  sections.forEach(section => {
-    const sectionTop = section.offsetTop;
-    const sectionHeight = section.offsetHeight;
-    if (pageYOffset >= sectionTop - sectionHeight / 3) {
-      current = section.getAttribute("id");
-    }
-  });
-
-  navLinks.forEach(link => {
-    link.classList.remove("active");
-    if (current && link.getAttribute("href").includes(current)) {
-      link.classList.add("active");
-    }
-  });
+navLinks.forEach(link => {
+  if (link.getAttribute("href") === currentPage) {
+    link.classList.add("active");
+  }
 });
 
 // Back to Top button functionality
@@ -56,34 +46,4 @@ window.addEventListener("scroll", () => {
 
 topBtn.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
-});
-
-// Contact form validation (if you add a form later)
-function validateForm() {
-  const name = document.getElementById("name")?.value.trim();
-  const email = document.getElementById("email")?.value.trim();
-  const message = document.getElementById("message")?.value.trim();
-
-  if (!name || !email || !message) {
-    alert("Please fill out all fields before submitting.");
-    return false;
-  }
-  return true;
-}
-
-fetch("header.html")
-  .then(response => response.text())
-  .then(data => {
-    document.getElementById("header").innerHTML = data;
-
-// Attach after header is loaded
-document.addEventListener("DOMContentLoaded", () => {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const navLinks = document.querySelector(".nav-links");
-
-  if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-    });
-  }
 });

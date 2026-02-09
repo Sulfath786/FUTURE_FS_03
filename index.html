@@ -108,19 +108,15 @@
   </footer>
 
   <script>
-    fetch("header.html")
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById("header").innerHTML = data;
+  <script>
+  const navToggle = document.querySelector('.nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
 
-        // re-attach menu toggle functionality after loading
-        const menuToggle = document.querySelector(".menu-toggle");
-        const navLinks = document.querySelector(".nav-links");
-        menuToggle.addEventListener("click", () => {
-          navLinks.classList.toggle("active");
-        });
-      });
-  </script>
+  navToggle.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', !expanded);
+    navMenu.classList.toggle('open');
+  });
 
   <script src="script.js"></script>
 </body>
