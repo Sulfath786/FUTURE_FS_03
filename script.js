@@ -1,5 +1,5 @@
 // Mobile nav toggle
-const navToggle = document.querySelector(".nav-toggle");
+const navToggle = document.querySelector(".menu-toggle");
 const navMenu = document.getElementById("nav-menu");
 if (navToggle) {
   navToggle.addEventListener("click", () => {
