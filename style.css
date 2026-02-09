@@ -73,12 +73,13 @@ nav a:hover {
 /* Responsive: stack links on smaller screens */
 @media (max-width: 768px) {
   nav {
-    flex-direction: column; /* logo on top, links below */
+    flex-direction: row; /* logo on top, links below */
     align-items: center;
   }
 
   #nav-menu {
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
   }
