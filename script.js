@@ -1,16 +1,3 @@
-// Mobile nav toggle
-const navToggle = document.querySelector(".menu-toggle");
-const navMenu = document.getElementById("nav-menu");
-if (navToggle) {
-  navToggle.addEventListener("click", () => {
-    const open = navMenu.classList.toggle("open");
-    navToggle.setAttribute("aria-expanded", open ? "true" : "false");
-  });
-}
-
-// Highlight active nav link automatically
-const currentPage = window.location.pathname.split("/").pop();
-const navLinks = document.querySelectorAll(".nav-menu a");
 
 navLinks.forEach(link => {
   if (link.getAttribute("href") === currentPage) {

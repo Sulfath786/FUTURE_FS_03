@@ -12,7 +12,6 @@
   <header>
     <nav aria-label="Main navigation">
       <img src="images/logo.png" alt="The Flavour Hub Logo" class="logo">
-       <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
       <ul id="nav-menu"></ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="menu.html" class="active">Menu</a></li>
@@ -270,16 +269,6 @@
     <p>&copy; 2026 The Flavour Hub. All Rights Reserved.</p>
   </footer>
 
-   <script>
-  const navToggle = document.querySelector('.menu-toggle');
-  const navMenu = document.getElementById('nav-menu');
-
-  navToggle.addEventListener('click', () => {
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', !expanded);
-    navMenu.classList.toggle('open');
-  });
-</script>
 <script src="script.js"></script>
 </body>
 </html>
