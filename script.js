@@ -5,7 +5,7 @@ navLinks.forEach(link => {
   }
 });
 
-// Back to Top button functionality
+
 const topBtn = document.createElement("button");
 topBtn.id = "backToTop";
 topBtn.textContent = "↑ Top";
